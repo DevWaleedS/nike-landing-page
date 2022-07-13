@@ -1,0 +1,494 @@
+/*-----------------------------------*\
+  #style.css
+\*-----------------------------------*/
+
+/**
+ * copyright 2022 @WaleedSalah
+ */
+
+
+@import url('https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Cairo:wght@200;300;400;500;600;700;800;900&family=El+Messiri:wght@400;500;600&family=Open+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap');
+
+
+html{
+  scroll-behavior: smooth;
+
+}
+body{
+  font-family: 'Almarai', sans-serif;
+}
+
+/*-----------------------------------*\
+  #CUSTOM PROPERTY
+\*-----------------------------------*/
+
+:root {
+
+  /**
+   * colors
+   */
+
+  --blue: #1C35FF;
+  --black: #1E1F1F;
+  --gray: #E7E6E7;
+  --gray-2: #E6E7FE;
+  --white: hsl(0, 100%, 100%);
+  --onyx: hsl(0, 0%, 27%);
+
+  /**
+   * typography
+   */
+
+  --fs-1: 2.563rem;
+  --fs-2: 1.563rem;
+  --fs-3: 1.25rem;
+  --fs-4: 1.125rem;
+  --fs-5: 1rem;
+  --fs-6: 0.938rem;
+  --fs-7: 0.875rem;
+  --fs-8: 0.813rem;
+  --fs-9: 0.75rem;
+  --fs-10: 0.688rem;
+  --fs-11: 0.625rem;
+
+  --weight-300: 300;
+  --weight-400: 400;
+  --weight-500: 500;
+  --weight-600: 600;
+  --weight-700: 700;
+
+  /**
+   * border-radius
+   */
+
+  --border-radius-md: 15px;
+  --border-radius-sm: 10px;
+
+  /**
+   * transition 
+   */
+
+  --transition-timing: 0.2s ease;
+
+}
+
+
+/*-----------------------------------*\
+  #RESET
+\*-----------------------------------*/
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+a { text-decoration: none; }
+
+li { list-style: none; }
+
+button {
+  background: none;
+  font: inherit;
+  border: none;
+  cursor: pointer;
+}
+
+img, ion-icon, button, a { display: block; }
+
+span { display: inline-block; }
+
+html {
+  font-family: 'Almarai', sans-serif;
+  overscroll-behavior: contain;
+  scroll-behavior: smooth;
+}
+
+body{
+  font-family: 'Almarai', sans-serif;
+}
+
+input {
+  display: block;
+  width: 100%;
+  font: inherit;
+}
+
+input::placeholder { font: inherit; }
+
+body { background: var(--white); }
+
+/**
+ * scrollbar style
+ */
+
+body::-webkit-scrollbar { width: 16px; }
+
+body::-webkit-scrollbar-track {
+  background: var(--white);
+  border-left: 1px solid var(--cultured);
+}
+
+body::-webkit-scrollbar-thumb {
+  background: hsl(0, 0%, 80%);
+  border: 3px solid var(--white);
+  border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb:hover { background: hsl(0, 0%, 70%); }
+
+
+/*-----------------------------------*\
+  #REUSED STYLE
+\*-----------------------------------*/
+.container {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+ 
+}
+
+
+
+@media (min-width: 768px) {
+  .container {
+    width: 750px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    width: 970px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    width: 1300px;
+  }
+}
+
+/*-----------------------------------*\
+  #RHEADER
+\*-----------------------------------*/
+
+.nav-links{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  padding: 10px 0;
+}
+
+.brand{
+  flex: 0.5;
+}
+.nav-items , .nav-icons{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+}
+
+.menu #toggle-menu{
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+}
+
+
+.nav-items a ,
+.menu  a,
+.nav-icons a
+{
+  color: var(--black);
+  font-size: var(--fs-3);
+  font-weight: var(--weight-700);
+  transition: color var(--transition-timing);
+  -webkit-transition: color var(--transition-timing);
+  -moz-transition: color var(--transition-timing);
+  -ms-transition: color var(--transition-timing);
+  -o-transition: color var(--transition-timing);
+}
+
+.nav-items a:hover ,
+.menu  a:hover,
+.nav-icons a:hover {
+  color: rgb(30 31 31 / 78%);
+}
+
+
+
+
+.nav-icons a{
+  background-color: var(--gray);
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-2);
+  font-weight: 900;
+  border-radius: var(--border-radius-md);
+  -webkit-border-radius: var(--border-radius-md);
+  -moz-border-radius: var(--border-radius-md);
+  -ms-border-radius: var(--border-radius-md);
+  -o-border-radius: var(--border-radius-md);
+  transition: background-color  var(--transition-timing);
+  -webkit-transition: background-color  var(--transition-timing);
+  -moz-transition: background-color  var(--transition-timing);
+  -ms-transition: background-color  var(--transition-timing);
+  -o-transition: background-color  var(--transition-timing);
+  
+}
+.nav-icons a:hover{
+  background-color: var(--gray-2);
+}
+.nav-icons a ion-icon {--ionicon-stroke-width:40px}
+
+#toggle-menu   ion-icon {
+  font-size: var(--fs-2);
+  --ionicon-stroke-width:50px
+}
+
+/*-----------------------------------*\
+  #HERO
+\*-----------------------------------*/
+
+.hero-box{
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  gap: 80px;
+  overflow: hidden;
+
+}
+
+.hero-icons .count{
+  width: 200px;
+  text-align: center;
+  font-size: var(--fs-2);
+  font-weight: var(--weight-700);
+  margin-bottom: 30px;
+}
+
+.hero-icons .count span{
+  font-size: var(--fs-1);
+
+}
+
+.hero-icons .icons .title{
+    background: var(--gray-2);
+    padding: 5px 20px;
+    width: 200px;
+    border: 1px solid #616464;
+    text-align: center;
+    margin-bottom: 60px;
+    box-shadow: 0px 5px 8px -2px #616464;
+}
+
+.icon-container{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 200px;
+  row-gap: 50px;
+  
+}
+.icon-container::after{
+  position: absolute;
+  content: "";
+  left: 15px;
+  top: -58px;
+  height: 355px;
+  width: 5px;
+  background-color: var(--blue);
+  border-radius: 24px;
+}
+.icon-container i{
+  color: var(--blue) ;
+  border: none;
+  background: var(--white);
+  font-size: 40px;
+  cursor: pointer;
+
+}
+
+
+.hero-text{
+  margin-top: 120px;
+  position: relative;
+}
+
+.overlay-heading{
+    position: absolute;
+    color: #F2F3FE;
+    font-size: 120px;
+    z-index: -1;
+    top: -60px;
+    left: 25px;
+    font-style: italic;
+    
+}
+
+.hero-title{
+  font-size: 40px;
+  font-weight: var(--weight-600);
+  margin-bottom: 10px;
+
+}
+
+.desc{
+  font-size: var(--fs-4);
+  width: 400px;
+  font-weight: var(--weight-500);
+  margin-bottom: 15px;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  line-height: 1.8;
+
+}
+.hero-btn{
+  background-color: var(--gray-2);
+  width:max-content;
+  height: max-content;
+  padding: 10px 30px;
+  font-size: var(--fs-3);
+  font-weight: 800;
+  margin-bottom: 15px;
+  border-radius: var(--border-radius-sm);
+  -webkit-border-radius: var(--border-radius-sm);
+  -moz-border-radius: var(--border-radius-sm);
+  -ms-border-radius: var(--border-radius-sm);
+  -o-border-radius: var(--border-radius-sm);
+  transition: background-color var(--transition-timing);
+  -webkit-transition: background-color var(--transition-timing);
+  -moz-transition: background-color var(--transition-timing);
+  -ms-transition: background-color var(--transition-timing);
+  -o-transition: background-color var(--transition-timing);
+}
+
+.hero-btn:hover{
+  background-color: var(--gray);
+
+}
+
+.price{
+  color: var(--black);
+  font-size: 1.8rem;
+  font-weight: 700;
+  width: 33.33%;
+  text-align: center;
+}
+
+.hero-image{
+ margin-top: 120px;
+  position: relative;
+}
+.hero-image .img-box {
+  position: relative;
+  margin-bottom: -75px;
+  
+}
+.hero-image .img-box::after{
+  position: absolute;
+  content: "";
+  top: 0;
+  z-index: -1;
+  background-color: var(--gray-2);
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  width: 400px;
+  height: 400px;
+
+}
+.hero-image .img-box img {
+    position: relative;
+    /* width: 600px; */
+    top: -75px;
+    left: 41px;
+    filter: drop-shadow(0px 21px 12px #9A9A9A);
+    -webkit-filter: drop-shadow(0px 21px 12px #9A9A9A);
+    transform: rotate(334deg);
+    -webkit-transform: rotate(334deg);
+    -moz-transform: rotate(334deg);
+    -ms-transform: rotate(334deg);
+    -o-transform: rotate(334deg);
+}
+
+
+.vraiants-contant , 
+.variants-box{
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 30px;
+
+}
+.prev , 
+.next{
+    background-color: var(--gray-2);
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background-color var(--transition-timing);
+    -webkit-transition: background-color var(--transition-timing);
+    -moz-transition: background-color var(--transition-timing);
+    -ms-transition: background-color var(--transition-timing);
+    -o-transition: background-color var(--transition-timing);
+}
+
+.prev:hover , 
+.next:hover{
+    background-color: var(--gray);
+
+}
+.prev , 
+.next ion-icon{
+   --ionicon-stroke-width:120px;
+   font-size: 28px;
+  }
+
+.variants-box .variant{
+  background-color: var(--gray);
+  width: 100px;
+  height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: var(--border-radius-md);
+  -webkit-border-radius: var(--border-radius-md);
+  -moz-border-radius: var(--border-radius-md);
+  -ms-border-radius: var(--border-radius-md);
+  -o-border-radius: var(--border-radius-md);
+ 
+}
+
+.variants-box .variant:hover img{
+  transform: translateY(-5px);
+  -webkit-transform: translateY(-5px);
+  -moz-transform: translateY(-5px);
+  -ms-transform: translateY(-5px);
+  -o-transform: translateY(-5px);
+}
+.variants-box .variant img{
+  transform: rotate(324deg);
+  position: relative;
+  left: -11px;
+  top: -13px;
+  transition: transform var(--transition-timing);
+  -webkit-transition: transform var(--transition-timing);
+  -moz-transition: transform var(--transition-timing);
+  -ms-transition: transform var(--transition-timing);
+  -o-transition: transform var(--transition-timing);
+}
+
